@@ -35,7 +35,23 @@ func fetchMenuItems(forCategory categoryName: String, completion: @escaping ([Me
     task.resume()
 }
 
-func submitOrder(forMenuIds: [Int], completion: @escaping (Int?) -> Void){
+func submitOrder(forMenuIds menuIds: [Int], completion: @escaping (Int?) -> Void){ //@escaping double check this
+    
     let orderURL = baseURL.appendingPathComponent("order")
+    
+    var request = URLRequest(url: orderURL)
+    request.httpMethod = "POST"
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    
+    let data: [String: [Int]] = ["menuIds": menuIds]
+    let jsonEncoder = JSONEncoder()
+    let jsonData = try? jsonEncoder.encode(data)
+    
+    request.httpBody = jsonData
+    let task = URLSession.shared.dataTask(with: request) {
+        (data, response, error) in
+        
+    }
+    task.resume()
 }
 }
