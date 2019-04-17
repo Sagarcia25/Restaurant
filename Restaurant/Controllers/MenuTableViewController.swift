@@ -32,6 +32,14 @@ class MenuTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MenuDetailSegue"{
+            let menuItemDetailViewController = segue.destination as! MenuItemDetailViewController
+            let index = tableView.indexPathForSelectedRow!.row
+            menuItemDetailViewController.menuItem = menuItems[index]
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -57,7 +65,7 @@ class MenuTableViewController: UITableViewController {
     func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath){
         let menuItem = menuItems[indexPath.row]
         cell.textLabel?.text = menuItem.name
-        cell.detailTextLabel?.text = "$\(menuItem.price)"
+        cell.detailTextLabel?.text = String(format: "$%.2f", menuItem.price)
        
     }
     
