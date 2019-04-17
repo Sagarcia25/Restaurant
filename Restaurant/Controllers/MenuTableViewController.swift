@@ -10,18 +10,28 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
 
+    let menuController = MenuController()
+    var menuItems = [MenuItem]()
     var category: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        title = category.capitalized
+        menuController.fetchMenuItems(forCategory: category){
+            (menuItems) in
+            if let menuItems = menuItems{
+                self.updateUI(with: menuItems)
+            }
+        }
     }
     
+    func updateUI(with menuItems: [MenuItem]) {
+        DispatchQueue.main.async {
+            self.menuItems = menuItems
+            self.tableView.reloadData()
+        }
+    }
 
     // MARK: - Table view data source
 
