@@ -107,12 +107,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="s8E-j7-HXV">
-                                <rect key="frame" x="87" y="204" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="s8E-j7-HXV">
+                                <rect key="frame" x="20" y="148" width="374" height="224"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="s8E-j7-HXV" secondAttribute="trailing" id="EvX-Xj-DhR"/>
+                            <constraint firstItem="s8E-j7-HXV" firstAttribute="leading" secondItem="gSM-Dl-7vc" secondAttribute="leadingMargin" id="XqZ-vL-nRV"/>
+                            <constraint firstItem="s8E-j7-HXV" firstAttribute="height" secondItem="gSM-Dl-7vc" secondAttribute="height" multiplier="0.25" id="e3x-xU-FbN"/>
+                            <constraint firstItem="s8E-j7-HXV" firstAttribute="top" secondItem="gSM-Dl-7vc" secondAttribute="topMargin" constant="8" id="kQG-Ro-4mG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="IlV-SA-74n"/>
                     </view>
                 </viewController>
