@@ -137,6 +137,9 @@
                                 <state key="normal" title="Add To Order">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="orderButtonTapped:" destination="HdE-v3-IKH" eventType="touchUpInside" id="vTR-Qb-rzk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
