@@ -229,11 +229,53 @@
                             <outlet property="delegate" destination="nhJ-AS-KGh" id="gmD-wa-7WT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Order" id="6FH-XD-GSC"/>
+                    <navigationItem key="navigationItem" title="My Order" id="6FH-XD-GSC">
+                        <barButtonItem key="leftBarButtonItem" title="Submit" id="xky-Wo-N7S"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="V08-qQ-k2W" kind="show" identifier="ConfirmationSegue" id="sm1-iY-V1P"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhJ-hL-Vw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1460.8695652173915" y="829.6875"/>
+        </scene>
+        <!--Order Confirmation View Controller-->
+        <scene sceneID="Ms8-gf-5hb">
+            <objects>
+                <viewController id="V08-qQ-k2W" customClass="OrderConfirmationViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="se5-8s-L04">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebm-Sm-5I6">
+                                <rect key="frame" x="20" y="438" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rA-3N-K5M">
+                                <rect key="frame" x="180" y="466.5" width="54" height="30"/>
+                                <state key="normal" title="Dismiss"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ebm-Sm-5I6" firstAttribute="centerY" secondItem="se5-8s-L04" secondAttribute="centerY" id="9Go-Sd-ptb"/>
+                            <constraint firstItem="ebm-Sm-5I6" firstAttribute="leading" secondItem="se5-8s-L04" secondAttribute="leadingMargin" id="Eou-iw-raX"/>
+                            <constraint firstItem="3rA-3N-K5M" firstAttribute="top" secondItem="ebm-Sm-5I6" secondAttribute="bottom" constant="8" id="Klp-aV-Dgb"/>
+                            <constraint firstItem="3rA-3N-K5M" firstAttribute="centerX" secondItem="se5-8s-L04" secondAttribute="centerX" id="sUj-kB-gTc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ebm-Sm-5I6" secondAttribute="trailing" id="xVW-9j-5dv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kUc-2j-tFO"/>
+                    </view>
+                    <connections>
+                        <outlet property="timeRemainingLabel" destination="ebm-Sm-5I6" id="BHj-jt-vGv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6iK-nt-4E9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2239.130434782609" y="829.6875"/>
         </scene>
         <!--Your Order-->
         <scene sceneID="6ss-su-hXm">
