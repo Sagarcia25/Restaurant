@@ -230,7 +230,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Order" id="6FH-XD-GSC">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="xky-Wo-N7S"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="xky-Wo-N7S">
+                            <connections>
+                                <action selector="submitTapped:" destination="nhJ-AS-KGh" id="3x2-cb-qYW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="V08-qQ-k2W" kind="show" identifier="ConfirmationSegue" id="sm1-iY-V1P"/>
@@ -272,13 +276,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kUc-2j-tFO"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Submit" id="WVq-hg-a6E">
-                            <connections>
-                                <action selector="submitTapped:" destination="V08-qQ-k2W" id="rqs-It-Uoa"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="timeRemainingLabel" destination="ebm-Sm-5I6" id="BHj-jt-vGv"/>

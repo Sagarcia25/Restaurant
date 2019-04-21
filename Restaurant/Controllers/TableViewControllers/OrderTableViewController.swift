@@ -10,7 +10,7 @@ import UIKit
 
 class OrderTableViewController: UITableViewController {
     
-//    var order = Order()
+    var orderMinutes = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +53,45 @@ class OrderTableViewController: UITableViewController {
         cell.detailTextLabel?.text = String(format: "$%.2f", menuItem.price)
     }
     
+    @IBAction func submitTapped(_ sender: Any) {
+        let orderTotal = MenuController.shared.order.menuItems.reduce(0.0){
+            (result, menuItem) -> Double in
+            print(result + menuItem.price)
+            return result + menuItem.price
+        }
+        
+        let formattedOrder = String(format: "$%.2f", orderTotal)
+        print(formattedOrder)
+        let alert = UIAlertController(title: "Confirm Order", message: "You are about to submit your order with a total of \(formattedOrder)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Submit", style: .default){ action in
+            self.uploadOrder()
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func uploadOrder(){
+        let menuIds = MenuController.shared.order.menuItems.map { $0.id}
+        MenuController.shared.submitOrder(forMenuIds: menuIds){
+            (minutes) in
+            DispatchQueue.main.async {
+                if let minutes = minutes{
+                    self.orderMinutes = minutes
+                    self.performSegue(withIdentifier: "ConfirmationSegue", sender: nil)
+                }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "ConfirmationSegue"{
+            let orderConfirmationViewController = segue.destination as! OrderConfirmationViewController
+            orderConfirmationViewController.minutes = orderMinutes
+        }
+    }
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         
@@ -89,14 +128,11 @@ class OrderTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
+    
 
 }
