@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7A6B4C522262CBAF009B3956 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B4C512262CBAF009B3956 /* AppDelegate.swift */; };
-		7A6B4C542262CBAF009B3956 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B4C532262CBAF009B3956 /* ViewController.swift */; };
 		7A6B4C572262CBAF009B3956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6B4C552262CBAF009B3956 /* Main.storyboard */; };
 		7A6B4C592262CBB1009B3956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A6B4C582262CBB1009B3956 /* Assets.xcassets */; };
 		7A6B4C5C2262CBB1009B3956 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6B4C5A2262CBB1009B3956 /* LaunchScreen.storyboard */; };
@@ -26,7 +25,6 @@
 /* Begin PBXFileReference section */
 		7A6B4C4E2262CBAF009B3956 /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A6B4C512262CBAF009B3956 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7A6B4C532262CBAF009B3956 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7A6B4C562262CBAF009B3956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A6B4C582262CBB1009B3956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A6B4C5B2262CBB1009B3956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 				7A6B4C702262D8CE009B3956 /* Views */,
 				7A6B4C712262D8E9009B3956 /* Controllers */,
 				7A6B4C512262CBAF009B3956 /* AppDelegate.swift */,
-				7A6B4C532262CBAF009B3956 /* ViewController.swift */,
 				7A6B4C582262CBB1009B3956 /* Assets.xcassets */,
 				7A6B4C5A2262CBB1009B3956 /* LaunchScreen.storyboard */,
 				7A6B4C5D2262CBB1009B3956 /* Info.plist */,
@@ -217,7 +214,6 @@
 				7A6B4C732262DA02009B3956 /* Order.swift in Sources */,
 				7A6B4C682262D2D4009B3956 /* OrderTableViewController.swift in Sources */,
 				7A6B4C6E2262D88D009B3956 /* IntermediaryModels.swift in Sources */,
-				7A6B4C542262CBAF009B3956 /* ViewController.swift in Sources */,
 				7A6B4C522262CBAF009B3956 /* AppDelegate.swift in Sources */,
 				7ADEDD6B226960E600020868 /* OrderConfirmationViewController.swift in Sources */,
 				7A6B4C642262D270009B3956 /* CategoryTableViewController.swift in Sources */,
